@@ -8,7 +8,13 @@ export default Ember.ObjectController.extend({
       this.set('isEditing', true);
     },
     updatePayment: function(payment){
-      // check if properties are set
+      /**
+       * if payment is valid
+       *    set values onto the object
+       *    stop editing
+       * else
+       *    send errors to the component
+       */
       var errors = validate(payment);
       if (Ember.keys(errors).length === 0) {
         this.setProperties(payment);

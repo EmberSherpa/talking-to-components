@@ -6,11 +6,11 @@ export default Ember.ArrayController.extend({
   actions: {
     addPayment: function(payment) {
       /**
-       * if payment information is valid
-       *    add payment information to list of payments
+       * if payment is valid
+       *    add payment to list of payments
        *    clear form
        * else
-       *    send error information to the component
+       *    send errors to the component
        */
       var errors = validate(payment);
       if (Ember.keys(errors).length === 0) {
@@ -23,6 +23,11 @@ export default Ember.ArrayController.extend({
   }
 });
 
+/**
+ * TODO: add example of validation with ember-validations library
+ * @param payment
+ * @returns {{}}
+ */
 export function validate(payment) {
   var errors = {};
 
