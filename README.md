@@ -1,8 +1,18 @@
-# Talking-to-components
+# Talking to Components
 
-This README outlines the details of collaborating on this Ember application.
+This app shows you how you can use {{on-action}} helper to trigger events in Ember Components when an action is triggered on the controller. 
 
-A short introduction of this app could easily go here.
+## Important Files
+
+* [app/templates/payments.hbs](app/templates/payments.hbs) - main file where payments can be created using ```{{payment-form}}``` component
+* [app/components/payment-form.js](app/components/payment-form.js) - component class where action handlers are defined
+* [app/controllers/payments.js](app/controllers/payments.js) - controller where addPayment action is defined
+* [app/controllers/payment-item](app/controllers/payment-item.js) - item controller where updatePayment action is defined
+
+## Known issues
+
+* [Events are fired on destroyed components](https://github.com/embersherpa/ember-helpers-on-action/issues/2)
+* [Use Ember Validations library instead of custom validation function](https://github.com/embersherpa/talking-to-components/issues/1)
 
 ## Prerequisites
 
