@@ -1,0 +1,16 @@
+<form {{action 'submit' on="submit"}}>
+  <label {{bind-attr class="errors.amount:error"}}>
+    Amount: {{input value=amountInput}}
+  </label>
+  <label>
+    Type: {{input value=typeInput}}
+  </label>
+  <label>
+    Date: {{input value=dateInput}}
+  </label>
+  <label>
+    Notes: {{input value=notesInput}}
+  </label>
+  <button>Add Payment</button>
+</form>
+{{yield}}

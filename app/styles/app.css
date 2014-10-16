@@ -1,0 +1,16 @@
+html, body {
+  margin: 20px;
+}
+
+td {
+  vertical-align: top;
+}
+
+.error input{
+  border: red 1px solid;
+}
+
+.error .message {
+  color: red;
+  font-size: 12px;
+}

@@ -1,0 +1,41 @@
+<h2 id='title'>Payments</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Type</th>
+      <th>Date</th>
+      <th>Notes</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each itemController="payment-item"}}
+    {{#if isEditing}}
+      {{#payment-form-row
+        amount=amount
+        type=type
+        date=date
+        notes=notes
+        on-submit="updatePayment"
+        action-text="Update"
+      }}
+        {{on-action 'show-payment-form-errors'}}
+      {{/payment-form-row}}
+    {{else}}
+      <tr>
+        <td>{{amount}}</td>
+        <td>{{type}}</td>
+        <td>{{date}}</td>
+        <td>{{notes}}</td>
+        <td><button {{action 'edit'}}>Edit</button></td>
+      </tr>
+    {{/if}}
+  {{/each}}
+  {{#payment-form-row on-submit="addPayment"}}
+    {{on-action 'clear-payment-form'}}
+    {{on-action 'show-payment-form-errors'}}
+  {{/payment-form-row}}
+  </tbody>
+</table>

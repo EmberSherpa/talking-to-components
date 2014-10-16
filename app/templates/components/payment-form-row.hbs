@@ -1,0 +1,20 @@
+<td {{bind-attr class="errors.amount:error"}}>
+  {{input value=amountInput}}
+  {{#if errors.amount}}<div class="message">{{errors.amount}}</div>{{/if}}
+</td>
+<td {{bind-attr class="errors.type:error"}}>
+  {{input value=typeInput}}
+  {{#if errors.type}}<div class="message">{{errors.amount}}</div>{{/if}}
+</td>
+<td {{bind-attr class="errors.date:error"}}>
+  {{input value=dateInput}}
+  {{#if errors.date}}<div class="message">{{errors.date}}</div>{{/if}}
+</td>
+<td {{bind-attr class="errors.notes:error"}}>
+  {{textarea value=notesInput}}
+  {{#if errors.notes}}<div class="message">{{errors.notes}}</div>{{/if}}
+</td>
+<td>
+  <button {{action 'submit'}}>{{action-text}}</button>
+</td>
+{{yield}}
